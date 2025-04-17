@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   julia_calc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vzohraby <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:11:49 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/16 17:49:03 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:40:01 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int julia_calc(t_fractal** data)
 	
 	cx = -0.7;
 	cy = 0.27015; 
+	mlx_put_image_to_window((*data)->mlx, (*data)->win, (*data)->img, 0, 0);
 	while (i < HEIGHT)
 	{
 		j = 0;
@@ -35,14 +36,14 @@ int julia_calc(t_fractal** data)
 		{
 			double zx, zy;
 			map_complex(j, i, *data, &zx, &zy);
-			int it = julia_iterations(zx, zy, cx, cy, (*data)->max_iterator);
-			int color = (it == (*data)->max_iterator) ? 0x000000 : it * (*data)->color;
+			int it = julia_iterations(zx, zy, cx, cy, MAX_ITER);
+			int color = (it == MAX_ITER) ? 0x000000 : it * (*data)->color;
 			// mlx_pixel_put((*data)->mlx, (*data)->win, j, i, color);
 			my_mlx_pixel_put(data, j, i, color);
+			// printf("%lf %lf\n", zx , zy);
             ++j;
 		}
 		++i;
 	}
-	mlx_put_image_to_window((*data)->mlx, (*data)->win, (*data)->img, 0, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:31:06 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/17 13:57:11 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:47:47 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include "../minilibx-linux/mlx.h"
 #include "../inc/libft.h"
 
-#define WIDTH 500
-#define HEIGHT 400
+#define WIDTH 1920
+#define HEIGHT 1080
+#define MAX_ITER 600
 
 typedef struct s_fractal {
     void *mlx; //mlxi het kap@
@@ -37,9 +38,6 @@ typedef struct s_fractal {
     int bits_per_pixel; //inch biti mech pahel 
     int line_lenght; //erkarutyun@
     int color;
-    double move;
-    int max_iterator;
-    int it;
     int endian; //bayteri karg@
     double zoom;
 }   t_fractal;
@@ -54,4 +52,6 @@ int julia_calc(t_fractal** data);
 
 int mouse_hook(int buttom ,int x, int y, void *param);
 int key_hook(int keycode, void *param);
+int zoom_image(int keycode, void* temp);
+
 #endif

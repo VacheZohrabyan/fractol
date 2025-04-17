@@ -6,7 +6,7 @@
 /*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:17:47 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/17 13:57:58 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:42:20 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int mouse_hook(int buttom ,int x, int y, void* param)
         printf("mec %d\n", ++i);
         // if (data->zoom > 150)
         //     data->zoom += 1; 
-            data->zoom += 100;
+            data->zoom += 1;
     }
     else if (buttom == 5)
     {

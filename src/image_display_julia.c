@@ -6,7 +6,7 @@
 /*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:42:59 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/17 13:31:37 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:41:57 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void image_display_julia(t_fractal** data)
 	mlx_loop_hook((*data)->mlx, julia_calc, data);
 	mlx_mouse_hook((*data)->win, mouse_hook, *data);
 	mlx_key_hook((*data)->win, key_hook, *data);
+	// mlx_clear_window((*data)->mlx, (*data)->win);
 	return ;
 }
