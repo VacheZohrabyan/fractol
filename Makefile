@@ -6,6 +6,12 @@ CFLAGS  = -Wall -Wextra -Werror
 SRCS    = src/main.c \
 			src/chack_function.c \
 			src/image_display_julia.c \
+			src/initialize_member.c \
+			src/julia_iteration.c \
+			src/julia_calc.c \
+			src/map_complex.c \
+			src/mouse_hook.c \
+			src/key_hook.c \
 			libft/ft_strlen.c \
 			libft/ft_strncmp.c \
 			libft/ft_strdup.c \
@@ -28,6 +34,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(MLX)
+	
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@

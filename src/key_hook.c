@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzohraby <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 14:21:53 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/16 14:00:50 by vzohraby         ###   ########.fr       */
+/*   Created: 2025/04/16 17:54:40 by vzohraby          #+#    #+#             */
+/*   Updated: 2025/04/17 12:20:40 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/fractol.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int key_hook(int keycode, void *param)
 {
-    size_t	i;
+	t_fractal *data = (t_fractal *)param;
 
-    i = 0;
-    while ((s1[i] || s2[i]) && i < n)
-    {
-        if (s1[i] != s2[i])
-        {
-            return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-        }
-        ++i;
-    }
-    return (0);
+	if (keycode == 65307) // ESC
+		exit(0);
+	else if (keycode == 65362) // UP
+		data->offset_y -= 0.1;
+	else if (keycode == 65364) // DOWN
+		data->offset_y += 0.1;
+	else if (keycode == 65361) // LEFT
+		data->offset_x -= 0.1;
+	else if (keycode == 65363) // RIGHT
+		data->offset_x += 0.1;
+	return (0);
 }

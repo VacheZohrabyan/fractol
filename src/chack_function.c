@@ -6,7 +6,7 @@
 /*   By: vzohraby <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 13:21:26 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/15 17:40:09 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/16 14:08:30 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ void chack_function(int argc, char **argv, t_fractal** data)
 	}
 	// else if (!ft_strncmp(argv[1], "mandelbrot", ft_strlen("mandelbrot")))
 	// {
-	// 	image_display_mandelbrot();
-	// }
+		// 	image_display_mandelbrot();
+		// }
+	// mlx_put_image_to_window((*data)->mlx, (*data)->win, (*data)->img, 0, 0);
 	mlx_put_image_to_window((*data)->mlx, (*data)->win, (*data)->img, 0, 0);
+	
+	printf("chack\n");
 	mlx_loop((*data)->mlx);
 	return ;
 }
