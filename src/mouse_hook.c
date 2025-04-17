@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_hook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vzohraby <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:17:47 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/16 17:46:39 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:57:58 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ int mouse_hook(int buttom ,int x, int y, void* param)
     if (buttom == 4)
     {
         printf("mec %d\n", ++i);
-        if (data->zoom > 150)
-            data->zoom += 0.05;
-        else 
-            data->zoom += 0.5;
+        // if (data->zoom > 150)
+        //     data->zoom += 1; 
+            data->zoom += 100;
     }
     else if (buttom == 5)
     {
         printf("poqr %d\n", --i);
-        if (data->zoom > 150)
-            data->zoom -= 0.5;
-        else if (data->zoom > 1)
-            data->zoom -= 0.05;
+        // if (data->zoom > 150)
+        //     data->zoom -= 0.5;
+        if (data->zoom > 1)
+            data->zoom -= 1;
     }
 	return (0);
 }

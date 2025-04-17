@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vzohraby <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vzohraby  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 17:54:40 by vzohraby          #+#    #+#             */
-/*   Updated: 2025/04/17 12:20:40 by vzohraby         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:53:55 by vzohraby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int key_hook(int keycode, void *param)
 	else if (keycode == 65364) // DOWN
 		data->offset_y += 0.1;
 	else if (keycode == 65361) // LEFT
-		data->offset_x -= 0.1;
+		data->offset_x -= data->move / data->zoom;
 	else if (keycode == 65363) // RIGHT
-		data->offset_x += 0.1;
+		data->offset_x += data->move / data->zoom;
 	return (0);
 }
